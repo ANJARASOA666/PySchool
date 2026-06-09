@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PySchool | Plus d'infos</title>
+</head>
+<body>
+
+    <!-- HEADER (Toujours identique et persistant) -->
+    <header>
+        <div class="logo">Py<span>School</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours</a></li>
+                <li><a href="exercices.html">Exercices</a></li>
+                <li><a href="À propos.html">À propos</a></li>
+                <li><a href="Plus d'infos.html" class="active">Plus d'infos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION EN-TÊTE -->
+        <div class="boite hero-section">
+            <h2>Centre d'informations & <span class="text-gradient">Contact</span></h2>
+            <p class="sous-titre">Des questions sur la formation, les outils ou un projet ? Trouvez vos réponses ici ou écrivez-nous directement.</p>
+        </div>
+
+        <!-- SECTION DOUBLE : FAQ & FORMULAIRE -->
+        <div class="info-layout">
+            
+            <!-- BLOC GAUCHE : FAQ INTERACTIVE SANS JS -->
+            <div class="boite faq-container">
+                <h3 class="section-title text-green" style="text-align: left; margin-bottom: 20px;">Foire Aux Questions</h3>
+                
+                <div class="faq-group">
+                    <!-- Question 1 -->
+                    <details class="faq-item" open>
+                        <summary class="faq-question">Combien de temps faut-il pour maîtriser Python ?</summary>
+                        <div class="faq-answer">
+                            <p>Pour acquérir les bases fondamentales (variables, boucles, fonctions), **2 à 4 semaines** d'apprentissage régulier suffisent. Pour devenir un développeur professionnel et décrocher un emploi, comptez généralement entre **6 mois et 1 an** de pratique intensive et de création de projets réels.</p>
+                        </div>
+                    </details>
+
+                    <!-- Question 2 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">Faut-il être fort en mathématiques pour coder ?</summary>
+                        <div class="faq-answer">
+                            <p>**C'est une idée reçue !** Sauf si vous vous lancez de manière pointue dans l'intelligence artificielle ou la cryptographie, vous n'avez besoin que d'une logique de base (additions, pourcentages, comparaisons). Python s'occupe des calculs complexes pour vous.</p>
+                        </div>
+                    </details>
+
+                    <!-- Question 3 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">Quels logiciels dois-je installer pour débuter ?</summary>
+                        <div class="faq-answer">
+                            <p>Vous avez simplement besoin de deux outils totalement gratuits :
+                                <br>1. **Python** (téléchargeable sur le site officiel python.org)
+                                <br>2. Un éditeur de code moderne comme **Visual Studio Code (VS Code)** ou **PyCharm Community**.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- BLOC DROITE : FORMULAIRE DE CONTACT MESSAGERIE -->
+            <div class="boite form-container">
+                <h3 class="section-title" style="text-align: left; margin-bottom: 5px;">Nous laisser un message</h3>
+                <p class="sous-titre" style="text-align: left; margin-bottom: 25px;">Une suggestion ou une question ? Notre équipe vous répond en moins de 24h.</p>
+                
+                <form class="cyber-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="username">Votre Nom</label>
+                            <input type="text" id="username" placeholder="Ex: Jean Dupont" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="useremail">Adresse Email</label>
+                            <input type="email" id="useremail" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">Sujet de votre message</label>
+                        <input type="text" id="subject" placeholder="Ex: Inscription, Aide sur un exercice..." required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" rows="6" placeholder="Écrivez votre texte ici..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <span>Envoyer le Message </span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- LIENS UTILES COMPLÉMENTAIRES -->
+        <div class="boite resource-box">
+            <h4 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.2rem; color: var(--accent-gold); margin-bottom: 15px;">🔗 Liens Utiles Externes</h4>
+            <div class="resource-links">
+                <a href="https://www.python.org" target="_blank">Documentation officielle Python</a>
+                <a href="https://github.com" target="_blank">Héberger vos projets (GitHub)</a>
+                <a href="https://stackoverflow.com" target="_blank">Communauté d'aide Stack Overflow</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,1034 @@
+/* Import de polices modernes et épurées */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+/* Variables de Design System */
+:root {
+    --bg-dark: #060913;
+    --bg-card: rgba(15, 22, 42, 0.6);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --primary: #0072ff;
+    --primary-glow: rgba(0, 114, 255, 0.4);
+    --accent-gold: #ffc837;
+    --accent-green: #00f2fe;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+}
+
+/* === Réinitialisation globale === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 60px;
+}
+
+/* === ANIMATIONS STRUCTURELLES === */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(0, 114, 255, 0.2); }
+    50% { box-shadow: 0 0 30px rgba(0, 114, 255, 0.4); }
+}
+
+/* === HEADER STYLE NYX === */
+header {
+    background: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+header .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+
+header .logo span {
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--primary-glow);
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header ul li a:hover, header ul li a.active {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* === LAYOUT CENTRAL === */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Les Boîtes d'arrière-plan (Glassmorphism) */
+.boite {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+/* Décalage temporel des boîtes pour l'effet d'apparition */
+.boite:nth-child(1) { animation-delay: 0.1s; }
+.boite:nth-child(2) { animation-delay: 0.2s; }
+.boite:nth-child(3) { animation-delay: 0.3s; }
+
+/* === SECTION HERO === */
+.hero-section {
+    text-align: center;
+    border-left: 4px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,114,255,0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+main h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content h3 {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+}
+
+/* === ÉLÉMENTS DE SECTION === */
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.text-green {
+    background: linear-gradient(90deg, #11998e, #38ef7d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sous-titre {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+/* === ARCHITECTURE DES GRILLES RE-STYLES === */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Le Style Unique des Cartes */
+.card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* === EFFETS INTERACTIFS AU SURVOL (HOVER EFFECT) === */
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Spécificités des bordures lumineuses dynamiques */
+.carac-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.15), 0 0 1px var(--primary);
+}
+
+.domaine-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15), 0 0 1px var(--accent-green);
+}
+
+/* === BADGES TAGS (Domaines) === */
+.d-tag {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-ia { background: rgba(0, 114, 255, 0.15); color: #38ef7d; }
+.tag-web { background: rgba(239, 71, 111, 0.15); color: #ef476f; }
+.tag-data { background: rgba(25ffd0, 255, 200, 0.15); color: var(--accent-gold); }
+.tag-security { background: rgba(155, 93, 229, 0.15); color: #9b5de5; }
+.tag-auto { background: rgba(0, 242, 254, 0.15); color: #00f2fe; }
+.tag-gaming { background: rgba(255, 159, 26, 0.15); color: #ff9f1a; }
+
+/* === INTERFACE AVANTAGES === */
+.separator {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 50px 0;
+}
+
+.av-card {
+    border-left: 3px solid #38ef7d;
+}
+
+.av-card:hover {
+    border-left-color: var(--accent-gold);
+}
+
+.av-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #38ef7d;
+    margin-bottom: 8px;
+}
+
+/* Intégration de balise code pour le fun */
+code {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #00f2fe;
+    font-family: monospace;
+}
+
+/* === RESPONSIVE DESIGN (Mobile Friendly) === */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+    }
+    
+    main h2 {
+        font-size: 2rem;
+    }
+    
+    .boite {
+        padding: 20px;
+    }
+}
+
+
+/* MENU EXERCICES */
+/* Cacher les inputs radio natifs */
+input[name="level-tabs"] {
+    display: none;
+}
+
+/* Conteneur global de la navigation par onglet */
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Barre des onglets */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Style de base des étiquettes (onglets) */
+.tab-label {
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+}
+
+.tab-label:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+}
+
+/* Masquer tous les panneaux par défaut */
+.content-panel {
+    display: none;
+    animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* COMPORTEMENT DES ONGLETS ACTIFS (Magie du CSS) */
+#tab-debutant:checked ~ .tabs-nav .lbl-debutant { background: rgba(56, 239, 125, 0.15); color: #38ef7d; box-shadow: 0 0 10px rgba(56, 239, 125, 0.1); }
+#tab-inter:checked ~ .tabs-nav .lbl-inter { background: rgba(255, 200, 55, 0.15); color: var(--accent-gold); box-shadow: 0 0 10px rgba(255, 200, 55, 0.1); }
+#tab-avance:checked ~ .tabs-nav .lbl-avance { background: rgba(0, 114, 255, 0.15); color: var(--primary); box-shadow: 0 0 10px rgba(0, 114, 255, 0.1); }
+#tab-projets:checked ~ .tabs-nav .lbl-projets { background: rgba(155, 93, 229, 0.15); color: #9b5de5; box-shadow: 0 0 10px rgba(155, 93, 229, 0.1); }
+
+/* Affichage dynamique du panneau correspondant au bouton coché */
+#tab-debutant:checked ~ .tabs-content .panel-debutant { display: block; }
+#tab-inter:checked ~ .tabs-content .panel-inter { display: block; }
+#tab-avance:checked ~ .tabs-content .panel-avance { display: block; }
+#tab-projets:checked ~ .tabs-content .panel-projets { display: block; }
+
+/* STYLE SPÉCIFIQUE DES CARTES D'EXERCICES */
+.exe-card {
+    border-top: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Badges d'onglets d'exercices */
+.exe-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.badge-green { background: rgba(56, 239, 125, 0.1); color: #38ef7d; }
+.badge-yellow { background: rgba(255, 200, 55, 0.1); color: var(--accent-gold); }
+.badge-blue { background: rgba(0, 114, 255, 0.1); color: var(--primary); }
+.badge-purple { background: rgba(155, 93, 229, 0.1); color: #9b5de5; }
+
+/* Effets de survol spécifiques par niveau */
+#tab-debutant:checked ~ .tabs-content .exe-card:hover { border-color: #38ef7d; box-shadow: 0 15px 30px rgba(56, 239, 125, 0.05); }
+#tab-inter:checked ~ .tabs-content .exe-card:hover { border-color: var(--accent-gold); box-shadow: 0 15px 30px rgba(255, 200, 55, 0.05); }
+#tab-avance:checked ~ .tabs-content .exe-card:hover { border-color: var(--primary); box-shadow: 0 15px 30px rgba(0, 114, 255, 0.05); }
+#tab-projets:checked ~ .tabs-content .exe-card:hover { border-color: #9b5de5; box-shadow: 0 15px 30px rgba(155, 93, 229, 0.05); }
+
+/* Responsive Adaptabilité Mobile */
+@media (max-width: 600px) {
+    .tabs-nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .tab-label {
+        text-align: center;
+    }
+}
+
+/* MENU À PROPOS */
+.about-intro {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    line-height: 1.8;
+}
+
+.about-intro strong {
+    color: var(--accent-gold);
+}
+
+.about-intro em {
+    color: var(--primary);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* --- STRUCTURE DE LA ROADMAP (TIMELINE) --- */
+.roadmap-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+    position: relative;
+}
+
+/* Ligne centrale verticale (uniquement sur desktop) */
+@media (min-width: 769px) {
+    .roadmap-timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: linear-gradient(to bottom, var(--primary), var(--accent-green), transparent);
+        transform: translateX(-50%);
+    }
+}
+
+/* Une ligne/étape de la roadmap */
+.roadmap-step {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+/* Les bulles de numéros */
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: rgba(15, 22, 42, 0.9);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    box-shadow: 0 0 15px var(--primary-glow);
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+/* Bloc de contenu de l'étape */
+.step-content {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 16px;
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+.step-content h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Effet de survol sur les cartes de la roadmap */
+.step-content:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.01);
+}
+
+/* Alignement alterné sur Desktop */
+@media (min-width: 769px) {
+    .roadmap-step {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 40px;
+    }
+    
+    .text-right-desktop {
+        text-align: right;
+    }
+}
+
+/* --- RESPONSIVE MOBILE POUR ROADMAP --- */
+@media (max-width: 768px) {
+    .roadmap-step {
+        flex-direction: row; /* Aligne le numéro à gauche et le texte à droite */
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* MENU PLUS D'INFOS */
+.info-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* --- DESIGN DE LA FAQ (Balises native <details> et <summary>) --- */
+.faq-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(0, 242, 254, 0.3);
+}
+
+.faq-question {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    cursor: pointer;
+    list-style: none; /* Cache la flèche par défaut sur certains navigateurs */
+    position: relative;
+    padding-right: 25px;
+}
+
+/* Petite flèche personnalisée */
+.faq-question::after {
+    content: '➔';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease;
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.faq-item[open] .faq-question::after {
+    transform: translateY(-50%) rotate(90deg);
+    color: var(--accent-green);
+}
+
+.faq-answer {
+    margin-top: 12px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 10px;
+}
+
+/* --- DESIGN DU FORMULAIRE CYBER --- */
+.cyber-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.input-group input, 
+.input-group textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Effet focus néon au clic sur un champ */
+.input-group input:focus, 
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(0, 114, 255, 0.03);
+    box-shadow: 0 0 15px rgba(0, 114, 255, 0.2);
+}
+
+/* Bouton d'envoi Stylisé */
+.btn-submit {
+    background: linear-gradient(90deg, var(--primary), #00c6ff);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 114, 255, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
+}
+
+/* --- ZONE DES LIENS DE RESSOURCES --- */
+.resource-box {
+    text-align: center;
+    border-color: rgba(255, 200, 55, 0.15);
+}
+
+.resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.resource-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.resource-links a:hover {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    background: rgba(255, 200, 55, 0.05);
+}
+
+/* --- RESPONSIVE TABLETTES & MOBILES --- */
+@media (max-width: 900px) {
+    .info-layout {
+        grid-template-columns: 1fr; /* Empile la FAQ et le formulaire verticalement */
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr; /* Sépare Nom et Email sur smartphone */
+    }
+}
+
+/* MENU COURS */
+.course-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+    align-items: start;
+}
+
+/* --- SIDEBAR DE NAVIGATION FIXE --- */
+.course-sidebar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    position: sticky;
+    top: 100px; /* Se bloque sous le header lors du défilement */
+    max-height: calc(100vh - 140px);
+    overflow-y: auto; /* Permet de défiler à l'intérieur de la sidebar si écran court */
+    backdrop-filter: blur(15px);
+}
+
+.sidebar-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-links a:hover {
+    color: var(--primary);
+    background: rgba(0, 114, 255, 0.05);
+    padding-left: 18px; /* Effet de décalage dynamique */
+}
+
+/* --- ZONE DE CONTENU DES CHAPITRES --- */
+.course-content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.course-section {
+    position: relative;
+    scroll-margin-top: 100px; /* Aligne correctement le chapitre lors du clic dans le sommaire */
+}
+
+.chapter-badge {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--accent-green);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.course-section h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+/* Blocs d'instructions didactiques */
+.instructions {
+    background: rgba(255, 200, 55, 0.03);
+    border-left: 3px solid var(--accent-gold);
+    padding: 15px 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 20px;
+}
+
+.instructions h5 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--accent-gold);
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.instructions p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- DESIGN DES BLOCS DE CODE (IDE STYLE) --- */
+.code-block {
+    background: #03050a;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.code-block pre, .code-block code {
+    font-family: inherit;
+    color: #cbd5e1;
+}
+
+/* Thème d'éditeur couleur (Syntax Highlighting) */
+.code-block .keyword { color: #ff79c6; font-weight: bold; }   /* if, def, with, class */
+.code-block .function { color: #50fa7b; }                  /* Nom de fonctions */
+.code-block .string { color: #f1fa8c; }                    /* "Textes" */
+.code-block .number { color: #bd93f9; }                    /* Entiers / floats */
+.code-block .comment { color: #6272a4; font-style: italic; } /* # Commentaires */
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 992px) {
+    .course-layout {
+        grid-template-columns: 1fr; /* On empile la sidebar au-dessus sur tablette/mobile */
+    }
+    
+    .course-sidebar {
+        position: relative;
+        top: 0;
+        max-height: 250px; /* Devient une petite boîte défilante */
+    }
+}
+
+
+/*  RESPONSIVE GLOBAL (Tous écrans)  */
+
+/* 1. ÉCRANS MONITEURS & GRANDS LOGICIELS (Min 1440px) */
+@media (min-width: 1440px) {
+    main {
+        max-width: 1350px; /* Élargit légèrement le contenu sur les très grands écrans */
+    }
+    .course-layout {
+        max-width: 1500px;
+    }
+}
+
+/* 2. TABLETTES & PETITS PORTABLES (Max 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        /* Légère réduction des polices globales pour aérer l'affichage */
+        font-size: 15px; 
+    }
+    
+    main h2 {
+        font-size: 2.5rem;
+    }
+    
+    .course-layout {
+        grid-template-columns: 1fr; /* La sidebar passe au-dessus du contenu */
+        gap: 20px;
+    }
+    
+    .course-sidebar {
+        position: relative;
+        top: 0;
+        max-height: 250px; /* Devient une zone scrollable horizontalement ou verticalement */
+    }
+    
+    .info-layout {
+        grid-template-columns: 1fr; /* Empile la FAQ et le formulaire Cyber */
+    }
+}
+
+/* 3. TABLETTES VERTICALES & PHABLETTES (Max 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 5%;
+        gap: 15px;
+        text-align: center;
+    }
+
+    header ul {
+        flex-wrap: wrap; /* Évite que le menu déborde si bcp de liens */
+        justify-content: center;
+        gap: 8px;
+    }
+
+    header ul li a {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+    
+    main {
+        margin: 20px auto;
+        gap: 25px;
+    }
+    
+    main h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .boite {
+        padding: 25px 20px; /* Plus d'espace pour le contenu interne */
+        border-radius: 16px;
+    }
+
+    /* Ajustement de la grille pour éviter les cartes trop étirées */
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    /* Alignement de la Roadmap/Timeline en mode mobile */
+    .roadmap-step {
+        display: flex !important; /* Force le comportement flex plutôt que la grille 3 col */
+        flex-direction: row; 
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .text-right-desktop {
+        text-align: left; /* Remet le texte à gauche pour une lecture naturelle */
+    }
+
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* 4. SMARTPHONES STANDARDS ET MINI (Max 480px) */
+@media (max-width: 480px) {
+    body {
+        padding-bottom: 40px;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Gestion des badges de domaine (Tags) pour éviter qu'ils coupent l'écran */
+    .boite .grid, .resource-links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .resource-links a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Formulaire en une seule colonne */
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    /* Menu exercices (Tabs Nav) empilé proprement */
+    .tabs-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 6px;
+    }
+    
+    .tab-label {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Sécurité anti-débordement pour les blocs de code IDE */
+    .code-block {
+        padding: 15px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    /* Ajustement des détails de la FAQ */
+    .faq-question {
+        font-size: 1rem;
+    }
+}

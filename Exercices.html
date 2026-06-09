@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PySchool | Exercices</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Py<span>School</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html">Cours</a></li>
+                <li><a href="exercices.html" class="active">Exercices</a></li>
+                <li><a href="À propos.html">À propos</a></li>
+                <li><a href="Plus d'infos.html">Plus d'infos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="boite hero-section">
+            <h2>Entraînez-vous sur <span class="text-gradient">Python</span></h2>
+            <p class="sous-titre">Choisissez votre niveau et forgez vos compétences du code à travers des défis concrets.</p>
+        </div>
+
+        <div class="tabs-container">
+            
+            <input type="radio" name="level-tabs" id="tab-debutant" checked>
+            <input type="radio" name="level-tabs" id="tab-inter">
+            <input type="radio" name="level-tabs" id="tab-avance">
+            <input type="radio" name="level-tabs" id="tab-projets">
+
+            <div class="tabs-nav">
+                <label for="tab-debutant" class="tab-label lbl-debutant">🟢 Débutant</label>
+                <label for="tab-inter" class="tab-label lbl-inter">🟡 Intermédiaire</label>
+                <label for="tab-avance" class="tab-label lbl-avance">🔵 Avancé</label>
+                <label for="tab-projets" class="tab-label lbl-projets">🟣 Projets</label>
+            </div>
+
+            <div class="tabs-content">
+                
+                <div class="content-panel panel-debutant">
+                    <div class="grid">
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-green">Exo 1 • Variables</span>
+                            <h4>Le Calculateur d'Âge</h4>
+                            <p>Écrivez un script qui demande l'année de naissance de l'utilisateur, calcule son âge actuel et l'affiche dans une phrase complète.</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-green">Exo 2 • Conditions</span>
+                            <h4>Le Juste Prix des Places</h4>
+                            <p>Demandez l'âge d'un visiteur : s'il a moins de 18 ans, affichez "Tarif réduit : 5€". Sinon, affichez "Tarif plein : 10€".</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-green">Exo 3 • Boucles</span>
+                            <h4>La Table de Multiplication</h4>
+                            <p>Générez et affichez proprement la table de multiplication du nombre 7 (de 1 à 10) en utilisant une boucle <code>for</code>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel panel-inter">
+                    <div class="grid">
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-yellow">Exo 1 • Listes & Logique</span>
+                            <h4>Le Tri sélectif</h4>
+                            <p>Soit une liste de nombres de 1 à 20. Créez un script qui sépare cette liste en deux nouvelles listes : une contenant uniquement les nombres pairs, l'autre les impairs.</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-yellow">Exo 2 • Fonctions</span>
+                            <h4>Le Générateur de Mots de Passe</h4>
+                            <p>Créez une fonction qui prend en paramètre une longueur de caractères et renvoie un mot de passe aléatoire contenant des lettres miniatures, majuscules et des chiffres.</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-yellow">Exo 3 • Dictionnaires</span>
+                            <h4>Gestionnaire de Contacts</h4>
+                            <p>Créez un mini-répertoire téléphonique en utilisant un dictionnaire. L'utilisateur doit pouvoir chercher un nom et obtenir le numéro associé.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel panel-avance">
+                    <div class="grid">
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-blue">Exo 1 • POO</span>
+                            <h4>Le Simulateur de RPG</h4>
+                            <p>Créez une classe <code>Personnage</code> avec des attributs (nom, vie, attaque) et une méthode <code>attaquer(cible)</code>. Faites s'affronter deux instances jusqu'à la défaite de l'une d'elles.</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-blue">Exo 2 • Fichiers & Regex</span>
+                            <h4>Analyseur de Log Web</h4>
+                            <p>Ouvrez un fichier texte brut simulant des logs serveur. Utilisez les expressions régulières (Regex) pour extraire toutes les adresses IP uniques présentes dans le texte.</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-blue">Exo 3 • Algorithmie</span>
+                            <h4>Le Tri à Bulles</h4>
+                            <p>Implémentez manuellement l'algorithme du tri à bulles pour trier une liste de nombres désordonnés sans utiliser la fonction native <code>.sort()</code> de Python.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-panel panel-projets">
+                    <div class="grid">
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-purple">Projet 1 • Automatisation</span>
+                            <h4>Le Web Scraper de Prix</h4>
+                            <p>Développez un script avec <code>BeautifulSoup</code> ou <code>Selenium</code> capable d'extraire le prix d'un produit spécifique sur un site e-commerce et de vous l'envoyer par email.</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-purple">Projet 2 • Application Web</span>
+                            <h4>To-Do List API avec Flask</h4>
+                            <p>Concevez une application web de gestion de tâches complète en utilisant Flask et une base de données SQLite (Opérations CRUD complètes).</p>
+                        </div>
+                        <div class="card exe-card">
+                            <span class="exe-badge badge-purple">Projet 3 • Data Science / IA</span>
+                            <h4>Prédicteur de Prix Immobilier</h4>
+                            <p>Utilisez la bibliothèque <code>Scikit-Learn</code> pour entraîner un modèle de régression linéaire simple capable de prédire le prix d'une maison selon sa surface.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

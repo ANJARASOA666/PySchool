@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PySchool | Table des Cours</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Py<span>School</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="cours.html" class="active">Cours</a></li>
+                <li><a href="exercices.html">Exercices</a></li>
+                <li><a href="À propos.html">À propos</a></li>
+                <li><a href="Plus d'infos.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- INTERFACE PRINCIPALE DU COURS -->
+    <div class="course-layout">
+        
+        <!-- SIDEBAR : SOMMAIRE FIXE -->
+        <aside class="course-sidebar">
+            <h4 class="sidebar-title">Sommaire</h4>
+            <ul class="sidebar-links">
+                <li><a href="#env">1. Les Environnements</a></li>
+                <li><a href="#var">2. Les Variables & Types</a></li>
+                <li><a href="#cond">3. Les Conditions</a></li>
+                <li><a href="#listes">4. Les Listes & Conteneurs</a></li>
+                <li><a href="#boucles">5. Les Boucles</a></li>
+                <li><a href="#fonctions">6. Les Fonctions</a></li>
+                <li><a href="#fichiers">7. Gestion des Fichiers</a></li>
+                <li><a href="#regex">8. Les Expressions (Regex)</a></li>
+                <li><a href="#exceptions">9. Les Exceptions</a></li>
+                <li><a href="#poo">10. Objets & Héritage (POO)</a></li>
+                <li><a href="#decorateurs">11. Les Décorateurs</a></li>
+                <li><a href="#async">12. L'Asynchrone</a></li>
+                <li><a href="#gui">13. Interface Graphique (GUI)</a></li>
+            </ul>
+        </aside>
+
+        <!-- ZONE DE LECTURE DU COURS -->
+        <main class="course-content">
+            
+            <div class="boite hero-section">
+                <h2>Le Guide Ultime <span class="text-gradient">Python</span></h2>
+                <p class="sous-titre">De zéro aux concepts avancés de l'industrie. Suivez les instructions et observez le code.</p>
+            </div>
+
+            <!-- 1. ENVIRONNEMENTS -->
+            <section id="env" class="boite course-section">
+                <span class="chapter-badge">Chapitre 1</span>
+                <h3>Les Environnements de Développement</h3>
+                <p class="section-desc">Pour coder, il faut préparer son espace de travail. Python s'exécute via un interpréteur.</p>
+                <div class="instructions">
+                    <h5> Instructions :</h5>
+                    <p>Téléchargez Python sur le site officiel. Lors de l'installation sur Windows, cochez absolument la case <strong>"Add Python to PATH"</strong>. Installez ensuite <strong>VS Code</strong> et ajoutez l'extension officielle "Python".</p>
+                </div>
+                <div class="code-block">
+<pre><code><span class="comment"># Vérifier si Python est bien installé dans votre terminal :</span>
+python --version
+
+<span class="comment"># Créer un environnement virtuel (isoler vos projets) :</span>
+python -m venv mon_env
+
+<span class="comment"># Activer l'environnement (Windows) :</span>
+mon_env\Scripts\activate</code></pre>
+                </div>
+            </section>
+
+            <!-- 2. VARIABLES -->
+            <section id="var" class="boite course-section">
+                <span class="chapter-badge">Chapitre 2</span>
+                <h3>Les Variables et les Types de Données</h3>
+                <p class="section-desc">Une variable est une boîte mémoire dans laquelle on stocke une valeur. Python utilise le typage dynamique (pas besoin de déclarer le type).</p>
+                <div class="code-block">
+<pre><code>nom = <span class="string">"PySchool"</span>  <span class="comment"># Chaîne de caractères (str)</span>
+age = <span class="number">25</span>            <span class="comment"># Entier (int)</span>
+taille = <span class="number">1.85</span>       <span class="comment"># Décimal (float)</span>
+est_actif = <span class="keyword">True</span>    <span class="comment"># Booléen (bool)</span>
+
+<span class="comment"># Affichage formaté (f-string) :</span>
+print(f<span class="string">"{nom} a {age} ans."</span>)</code></pre>
+                </div>
+            </section>
+
+            <!-- 3. CONDITIONS -->
+            <section id="cond" class="boite course-section">
+                <span class="chapter-badge">Chapitre 3</span>
+                <h3>Les Conditions (if, elif, else)</h3>
+                <p class="section-desc">Permettent de prendre des décisions et d'orienter le comportement du programme selon des critères logiques.</p>
+                <div class="code-block">
+<pre><code>note = <span class="number">16</span>
+
+<span class="keyword">if</span> note >= <span class="number">16</span>:
+    print(<span class="string">"Excellent !"</span>)
+<span class="keyword">elif</span> note >= <span class="number">10</span>:
+    print(<span class="string">"Moyen."</span>)
+<span class="keyword">else</span>:
+    print(<span class="string">"Insuffisant."</span>)</code></pre>
+                </div>
+            </section>
+
+            <!-- 4. LISTES -->
+            <section id="listes" class="boite course-section">
+                <span class="chapter-badge">Chapitre 4</span>
+                <h3>Les Listes et Structures de Conteneurs</h3>
+                <p class="section-desc">Les listes permettent de stocker plusieurs éléments ordonnés dans une seule variable.</p>
+                <div class="code-block">
+<pre><code>outils = [<span class="string">"Python"</span>, <span class="string">"VS Code"</span>, <span class="string">"Git"</span>]
+
+outils.append(<span class="string">"Docker"</span>)  <span class="comment"># Ajoute un élément à la fin</span>
+premier = outils[<span class="number">0</span>]      <span class="comment"># Récupère "Python" (Index commence à 0)</span>
+
+print(len(outils))       <span class="comment"># Affiche le nombre d'éléments</span></code></pre>
+                </div>
+            </section>
+
+            <!-- 5. BOUCLES -->
+            <section id="boucles" class="boite course-section">
+                <span class="chapter-badge">Chapitre 5</span>
+                <h3>Les Boucles (For, While)</h3>
+                <p class="section-desc">Répéter un bloc de code automatiquement.</p>
+                <div class="code-block">
+<pre><code><span class="comment"># Boucle FOR : Idéal pour parcourir une collection ou une suite de nombres</span>
+<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">4</span>):
+    print(f<span class="string">"Tour numéro {i}"</span>)
+
+<span class="comment"># Boucle WHILE : Continue tant que la condition reste vraie</span>
+compteur = <span class="number">0</span>
+<span class="keyword">while</span> compteur < <span class="number">3</span>:
+    print(<span class="string">"En cours..."</span>)
+    compteur += <span class="number">1</span></code></pre>
+                </div>
+            </section>
+
+            <!-- 6. FONCTIONS -->
+            <section id="fonctions" class="boite course-section">
+                <span class="chapter-badge">Chapitre 6</span>
+                <h3>Les Fonctions</h3>
+                <p class="section-desc">Des blocs de code réutilisables créés avec le mot-clé <code>def</code> pour éviter de se répéter.</p>
+                <div class="code-block">
+<pre><code><span class="keyword">def</span> <span class="function">calculer_carre</span>(nombre):
+    résultat = nombre * nombre
+    <span class="keyword">return</span> résultat
+
+<span class="comment"># Appel de la fonction</span>
+mon_carre = calculer_carre(<span class="number">5</span>)  <span class="comment"># Renvoie 25</span></code></pre>
+                </div>
+            </section>
+
+            <!-- 7. GESTION DES FICHIERS -->
+            <section id="fichiers" class="boite course-section">
+                <span class="chapter-badge">Chapitre 7</span>
+                <h3>La Gestion des Fichiers</h3>
+                <p class="section-desc">Lire et écrire des données de manière persistante dans des fichiers textes ou CSV.</p>
+                <div class="instructions">
+                    <h5>Instruction :</h5>
+                    <p>Utilisez toujours le mot-clé <code>with</code>. Il garantit que le fichier se ferme automatiquement, même si une erreur survient au milieu du script.</p>
+                </div>
+                <div class="code-block">
+<pre><code><span class="comment"># Écrire dans un fichier (écrase le contenu existant avec 'w')</span>
+<span class="keyword">with</span> open(<span class="string">"notes.txt"</span>, <span class="string">"w"</span>, encoding=<span class="string">"utf-8"</span>) <span class="keyword">as</span> fichier:
+    fichier.write(<span class="string">"Apprendre Python en 2026\n"</span>)
+
+<span class="comment"># Lire le fichier ('r')</span>
+<span class="keyword">with</span> open(<span class="string">"notes.txt"</span>, <span class="string">"r"</span>) <span class="keyword">as</span> fichier:
+    contenu = fichier.read()
+    print(contenu)</code></pre>
+                </div>
+            </section>
+
+            <!-- 8. REGEX -->
+            <section id="regex" class="boite course-section">
+                <span class="chapter-badge">Chapitre 8</span>
+                <h3>Les Expressions Régulières (Regex)</h3>
+                <p class="section-desc">Utilisées pour chercher, valider ou extraire des motifs textuels complexes (comme vérifier si un email est valide).</p>
+                <div class="code-block">
+<pre><code><span class="keyword">import</span> re
+
+texte = <span class="string">"Contactez-nous à admin@pyschool.com ou info@test.fr"</span>
+<span class="comment"># Motif pour extraire les structures d'emails :</span>
+motif = <span class="string">r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"</span>
+
+emails = re.findall(motif, texte)
+print(emails)  <span class="comment"># ['admin@pyschool.com', 'info@test.fr']</span></code></pre>
+                </div>
+            </section>
+
+            <!-- 9. EXCEPTIONS -->
+            <section id="exceptions" class="boite course-section">
+                <span class="chapter-badge">Chapitre 9</span>
+                <h3>La Gestion des Exceptions (Erreurs)</h3>
+                <p class="section-desc">Empêcher un programme de se couper brutalement lorsqu'une erreur imprévue arrive.</p>
+                <div class="code-block">
+<pre><code><span class="keyword">try</span>:
+    nombre = int(input(<span class="string">"Entrez un diviseur : "</span>))
+    calcul = <span class="number">10</span> / nombre
+<span class="keyword">except</span> ZeroDivisionError:
+    print(<span class="string">"Erreur : Impossible de diviser par zéro !"</span>)
+<span class="keyword">except</span> ValueError:
+    print(<span class="string">"Erreur : Veuillez entrer un nombre valide."</span>)
+<span class="keyword">else</span>:
+    print(f<span class="string">"Résultat réussi : {calcul}"</span>)</code></pre>
+                </div>
+            </section>
+
+            <!-- 10. POO & HERITAGE -->
+            <section id="poo" class="boite course-section">
+                <span class="chapter-badge">Chapitre 10</span>
+                <h3>Objets, Classes et Héritage (POO)</h3>
+                <p class="section-desc">La Programmation Orientée Objet structure votre code pour imiter le monde réel.</p>
+                <div class="code-block">
+<pre><code><span class="comment"># Définition d'une classe parente</span>
+<span class="keyword">class</span> <span class="class">Robot</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(self, nom):
+        self.nom = nom  <span class="comment"># Attribut</span>
+        
+    <span class="keyword">def</span> <span class="function">saluer</span>(self):
+        <span class="keyword">return</span> f<span class="string">"Bip Boop, je suis {self.nom}"</span>
+
+<span class="comment"># Héritage : RobotCombat hérite de toutes les fonctionnalités de Robot</span>
+<span class="keyword">class</span> <span class="class">RobotCombat</span>(Robot):
+    <span class="keyword">def</span> <span class="function">attaquer</span>(self):
+        <span class="keyword">return</span> f<span class="string">"{self.nom} lance une attaque laser !"</span>
+
+<span class="comment"># Instanciation</span>
+mon_droide = RobotCombat(<span class="string">"R2D2"</span>)
+print(mon_droide.saluer())
+print(mon_droide.attaquer())</code></pre>
+                </div>
+            </section>
+
+            <!-- 11. DECORATEURS -->
+            <section id="decorateurs" class="boite course-section">
+                <span class="chapter-badge">Chapitre 11</span>
+                <h3>Les Décorateurs</h3>
+                <p class="section-desc">Un décorateur est une fonction qui prend une autre fonction et en modifie ou prolonge le comportement sans toucher directement à sa structure.</p>
+                <div class="code-block">
+<pre><code><span class="keyword">def</span> <span class="function">mon_decorateur</span>(fonction_initiale):
+    <span class="keyword">def</span> <span class="function">wrapper</span>():
+        print(<span class="string">"--- Début des opérations ---"</span>)
+        fonction_initiale()
+        print(<span class="string">"--- Fin des opérations ---"</span>)
+    <span class="keyword">return</span> wrapper
+
+@mon_decorateur
+<span class="keyword">def</span> <span class="function">dire_bonjour</span>():
+    print(<span class="string">"Bonjour tout le monde !"</span>)
+
+dire_bonjour() <span class="comment"># Affichera les tirets avant et après le bonjour</span></code></pre>
+                </div>
+            </section>
+
+            <!-- 12. ASYNCHRONE -->
+            <section id="async" class="boite course-section">
+                <span class="chapter-badge">Chapitre 12</span>
+                <h3>Les bases de l'Asynchrone (async/await)</h3>
+                <p class="section-desc">Permet de lancer des tâches en arrière-plan sans bloquer l'exécution globale du reste du programme (génial pour les requêtes web réseau).</p>
+                <div class="code-block">
+<pre><code><span class="keyword">import</span> asyncio
+
+<span class="keyword">async</span> <span class="keyword">def</span> <span class="function">telecharger_donnees</span>():
+    print(<span class="string">"Lancement du téléchargement..."</span>)
+    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>) <span class="comment"># Simule une attente réseau de 2 secondes</span>
+    print(<span class="string">"Données reçues !"</span>)
+
+<span class="keyword">async</span> <span class="keyword">def</span> <span class="function">main</span>():
+    <span class="keyword">await</span> asyncio.gather(telecharger_donnees(), telecharger_donnees())
+
+<span class="comment"># Lancer la boucle événementielle asynchrone</span>
+asyncio.run(main())</code></pre>
+                </div>
+            </section>
+
+            <!-- 13. INTERFACE GRAPHIQUE -->
+            <section id="gui" class="boite course-section">
+                <span class="chapter-badge">Chapitre 13</span>
+                <h3>Interface Graphique avec Tkinter (GUI)</h3>
+                <p class="section-desc">Créer de véritables fenêtres logicielles interactives avec des boutons et des zones de saisie pour l'utilisateur.</p>
+                <div class="code-block">
+<pre><code><span class="keyword">import</span> tkinter <span class="keyword">as</span> tk
+
+<span class="comment"># 1. Génération de la fenêtre principale</span>
+fenetre = tk.Tk()
+fenetre.title(<span class="string">"Mon Logiciel PySchool"</span>)
+fenetre.geometry(<span class="string">"300x150"</span>)
+
+<span class="comment"># 2. Action au clic du bouton</span>
+<span class="keyword">def</span> <span class="function">action_bouton</span>():
+    label.config(text=<span class="string">"Bravo ! Script exécuté."</span>)
+
+<span class="comment"># 3. Widgets (Composants)</span>
+label = tk.Label(fenetre, text=<span class="string">"Bienvenue dans l'interface"</span>)
+label.pack(pady=<span class="number">10</span>)
+
+bouton = tk.Button(fenetre, text=<span class="string">"Cliquez ici"</span>, command=action_bouton)
+bouton.pack()
+
+<span class="comment"># 4. Lancement de la boucle d'affichage continue</span>
+fenetre.mainloop()</code></pre>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

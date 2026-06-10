@@ -1032,3 +1032,96 @@ input[name="level-tabs"] {
         font-size: 1rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. ADAPTATION DU HEADER & MENU DE NAVIGATION */
+    header {
+        flex-direction: column; /* Le logo et le menu s'empilent verticalement */
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    header .logo {
+        margin-bottom: 15px; /* Espace sous le logo */
+    }
+
+    header nav ul {
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
+        justify-content: center;
+        gap: 10px 15px; /* Espace horizontal et vertical entre les menus */
+        padding: 0;
+    }
+
+    header nav ul li a {
+        padding: 6px 12px;
+        font-size: 14px; /* Réduction légère du texte pour mobile */
+    }
+
+    /* 2. ADAPTATION DE LA MISE EN PAGE DU COURS */
+    .course-layout {
+        flex-direction: column; /* La sidebar passe au-dessus du contenu */
+        padding: 10px;
+        gap: 20px;
+    }
+
+    /* 3. TRANSFORMATION DE LA SIDEBAR (SOMMAIRE) EN BARRE HORIZONTALE DE FILTRES */
+    .course-sidebar {
+        position: relative; /* Annule la position fixe ou collante sur mobile */
+        width: 100%; /* Prend toute la largeur */
+        max-height: 200px; /* Limite la hauteur pour ne pas envahir l'écran */
+        overflow-y: auto; /* Ajoute un défilement interne si la liste est longue */
+        padding: 15px;
+        background-color: #f9f9f9; /* Ajustez selon votre thème actuel */
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .sidebar-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .sidebar-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Aligne les chapitres sur plusieurs colonnes fluides */
+        gap: 8px;
+    }
+
+    .sidebar-links li a {
+        padding: 6px;
+        font-size: 13px;
+        display: block;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #eee;
+        text-align: center;
+    }
+
+    /* 4. ADAPTATION DE LA ZONE DE TEXTE ET DES BLOCS DE CODE */
+    .course-content {
+        width: 100%; /* Prend toute la largeur disponible */
+    }
+
+    .boite {
+        padding: 15px; /* Réduction des espacements internes */
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 22px; /* Titre principal plus adapté */
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    /* Empêcher le code de casser la mise en page générale */
+    .code-block pre {
+        overflow-x: auto; /* Ajoute une barre de défilement horizontale UNIQUEMENT pour le code */
+        white-space: pre;
+        padding: 12px;
+        font-size: 13px; /* Écrit un peu plus petit pour une meilleure lisibilité */
+    }
+}
